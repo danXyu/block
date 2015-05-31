@@ -9,12 +9,12 @@ import os
 import time
 
 ## Database Connection
-client = MongoClient()
-db = client.block
-print(db)
+# client = MongoClient()
+# db = client.block
+# print(db)
 
 ## Constants
-BUFFER_ZONE = 40
+BUFFER_ZONE = 35
 
 ## Global Variables
 counter = 0
@@ -111,26 +111,26 @@ class MuseServer(ServerThread):
         if r_forehead_mean == 0: r_forehead_mean = r_forehead
 
         # Insert all eeg data into mongo database with timestamps
-        db.eeg0.insert({
-            "name": "Dan Yu",
-            "time": datetime.now(),
-            "eegval": l_ear
-        });
-        db.eeg1.insert({
-            "name": "Dan Yu",
-            "time": datetime.now(),
-            "eegval": l_forehead
-        });
-        db.eeg2.insert({
-            "name": "Dan Yu",
-            "time": datetime.now(),
-            "eegval": r_forehead
-        })
-        db.eeg3.insert({
-            "name": "Dan Yu",
-            "time": datetime.now(),
-            "eegval": r_ear
-        });
+        # db.eeg0.insert({
+        #     "name": "Dan Yu",
+        #     "time": datetime.now(),
+        #     "eegval": l_ear
+        # });
+        # db.eeg1.insert({
+        #     "name": "Dan Yu",
+        #     "time": datetime.now(),
+        #     "eegval": l_forehead
+        # });
+        # db.eeg2.insert({
+        #     "name": "Dan Yu",
+        #     "time": datetime.now(),
+        #     "eegval": r_forehead
+        # })
+        # db.eeg3.insert({
+        #     "name": "Dan Yu",
+        #     "time": datetime.now(),
+        #     "eegval": r_ear
+        # });
 
         # Check the click direction to call device key presses.
         savedDirection = clickDirection(l_forehead, r_forehead)
